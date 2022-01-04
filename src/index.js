@@ -41,6 +41,7 @@ import spaceAfterTypeColon from './rules/spaceAfterTypeColon';
 import spaceBeforeGenericBracket from './rules/spaceBeforeGenericBracket';
 import spaceBeforeTypeColon from './rules/spaceBeforeTypeColon';
 import spreadExactType from './rules/spreadExactType';
+import typeAnnotationSpacing from './rules/typeAnnotationSpacing';
 import typeIdMatch from './rules/typeIdMatch';
 import typeImportStyle from './rules/typeImportStyle';
 import unionIntersectionSpacing from './rules/unionIntersectionSpacing';
@@ -93,6 +94,7 @@ const rules = {
   'space-before-generic-bracket': spaceBeforeGenericBracket,
   'space-before-type-colon': spaceBeforeTypeColon,
   'spread-exact-type': spreadExactType,
+  'type-annotation-spacing': typeAnnotationSpacing,
   'type-id-match': typeIdMatch,
   'type-import-style': typeImportStyle,
   'union-intersection-spacing': unionIntersectionSpacing,
@@ -106,7 +108,10 @@ export default {
     recommended,
   },
   rules: _.mapValues(rules, (rule, key) => {
-    if (['no-types-missing-file-annotation', 'require-valid-file-annotation'].includes(key)) {
+    if ([
+      'no-types-missing-file-annotation',
+      'require-valid-file-annotation',
+    ].includes(key)) {
       return rule;
     }
 
@@ -144,6 +149,7 @@ export default {
     'space-before-generic-bracket': 0,
     'space-before-type-colon': 0,
     'spread-exact-type': 0,
+    'type-annotation-spacing': 0,
     'type-id-match': 0,
     'type-import-style': 0,
     'union-intersection-spacing': 0,
